@@ -41,6 +41,9 @@ jobs:
         run: singularity build --fakeroot container.sif Singularity.def
 
       - name: Run the Singularity container
+        run: ./container.sif 
+
+      - name: exec the Singularity container
         run: singularity exec container.sif echo "Hello, Singularity!"
 
 
