@@ -1,5 +1,5 @@
-if(EXISTS "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/build/test_multiplication[1]_tests.cmake")
-  include("/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/build/test_multiplication[1]_tests.cmake")
+if(EXISTS "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/build/test_multiplication[1]_tests.cmake")
+  include("/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/build/test_multiplication[1]_tests.cmake")
 else()
   add_test(test_multiplication_NOT_BUILT test_multiplication_NOT_BUILT)
 endif()

@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/main.cpp.o: \
- /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/src/main.cpp \
+ /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/src/main.cpp \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/include/matrix_multiplication.h \
+ /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/include/matrix_multiplication.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/googletest/googlemock/src/gmock_main.cc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
+  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/googletest/googlemock/src/gmock_main.cc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

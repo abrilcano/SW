@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/googletest
+# Install script for directory: /mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Project/SE_project_part2/build/googletest/googlemock/cmake_install.cmake")
+  include("/mnt/c/Users/USUARIO/Documents/HPCPolimi/Year1/S2/SW4HPC/Exercises/SW/build/googletest/googlemock/cmake_install.cmake")
 
 endif()
 
