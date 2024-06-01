@@ -2,7 +2,6 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    ls
     lib/libmatrix_multiplication_without_errors.a /opt
 
 %environment
