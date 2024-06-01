@@ -32,8 +32,6 @@ jobs:
           echo "Tag is $tag."
           echo "tag=$tag" >> $GITHUB_ENV
 
-      - name: Run the Singularity container
-        run: ./container.sif
-      - name: exec the Singularity container
-        run: singularity exec container.sif echo "Hello, Singularity!"
+      - name: Exec the Singularity container
+        run: mpirun -n 4 singularity exec container.sif /opt/mpitest
         

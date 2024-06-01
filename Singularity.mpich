@@ -37,9 +37,3 @@ From: ubuntu:18.04
     echo "Compiling the MPI application..."
     cd /opt && mpicc -o mpitest mpitest.c
 
-%runscript
-    ls 
-    cd /opt 
-    ls
-    echo "Compiling the MPI application..."
-    cd /opt && mpicc -o mpitest mpitest.c
