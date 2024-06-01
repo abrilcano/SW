@@ -1,0 +1,39 @@
+name: Singularity Build (docker)
+
+on: [push, pull_request]
+  
+jobs:
+  build-container:
+    runs-on: ubuntu-latest
+    strategy:
+      # Keep going on other deployments if anything bloops
+      fail-fast: false
+      matrix:
+        recipe: [Singularity.mpich] 
+        singularity_version:
+          - '3.8.1'
+
+    container:
+      image: quay.io/singularity/singularity:v${{ matrix.singularity_version }}
+      options: --privileged
+
+    name: Build ${{ matrix.recipe }}
+    steps:
+
+      - name: Check out code for the container builds
+        uses: actions/checkout@v2
+
+      - name: Build ${{ matrix.recipe }}
+        env:
+          recipe: ${{ matrix.recipe }}
+        run: |
+          sudo -E singularity build container.sif ${recipe}
+          tag=$(echo "${recipe/Singularity\./}")
+          echo "Tag is $tag."
+          echo "tag=$tag" >> $GITHUB_ENV
+
+      - name: Run the Singularity container
+        run: ./container.sif
+      - name: exec the Singularity container
+        run: singularity exec container.sif echo "Hello, Singularity!"
+        
