@@ -20,4 +20,5 @@ From: ubuntu:latest
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-    mpirun -np 4 ./libmatrix_multiplication_without_errors
+    ls 
+    mpirun -n 4 singularity exec --bind /opt/openmpi:/opt/mpi / /opt/libmatrix_multiplication_without_errors.a
