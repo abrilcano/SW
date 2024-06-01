@@ -2,7 +2,8 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-     lib\libmatrix_multiplication_without_errors.a /opt
+    ls
+    lib/libmatrix_multiplication_without_errors.a /opt
 
 %environment
     export OMPI_DIR=/opt/ompi
