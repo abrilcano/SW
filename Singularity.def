@@ -2,7 +2,6 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    /tmp/NetPIPE-5.1.4/NPmpi /opt
     lib/libmatrix_multiplication_without_errors.a /opt
 
 %environment
