@@ -17,6 +17,8 @@ From: ubuntu:latest
     mkdir -p /opt/mpi
     apt-get clean
 
+    pwd
+    cd . 
     mkdir -p build && cd build
     cmake ..
     cmake --build .
