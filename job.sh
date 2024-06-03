@@ -11,6 +11,6 @@ module load singularity
 export TMPDIR=$HOME/tmp
 mkdir -p $TMPDIR
 
-singularity exec --bind $TMPDIR:$TMPDIR container.sif bash -c "export OMPI_MCA_tmpdir_base=$TMPDIR && mpirun -np 2 /prg/main"
+singularity exec --bind $TMPDIR:$TMPDIR container.sif bash -c "export OMPI_MCA_tmpdir_base=$TMPDIR && mpirun -np 2 /prj/main"
 
 
