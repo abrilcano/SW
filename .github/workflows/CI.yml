@@ -33,10 +33,19 @@ jobs:
 
       - name: Check out code for the container builds
         uses: actions/checkout@v3
-
+        
+      - name: SSHPASS Github Action
+        uses: matheusvanzan/sshpass-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          run: |
+            echo "Hello, SSH!"
+  
       - name : Setup MPI
         uses: mpi4py/setup-mpi@v1
-          
+
       - name: Setup CMake
         uses: jwlawson/actions-setup-cmake@v1
         
@@ -54,13 +63,5 @@ jobs:
       - name: exec the Singularity container
         run: singularity exec container.sif echo "Hello, Singularity!"
       
-      - name: SSHPASS Github Action
-        uses: matheusvanzan/sshpass-action@v1
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          run: |
-            echo "Hello, SSH!"
         
         
