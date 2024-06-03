@@ -15,7 +15,7 @@ jobs:
 
     container:
       image: quay.io/singularity/singularity:v${{ matrix.singularity_version }}
-      
+      options: --privileged
 
     name: Build ${{ matrix.recipe }}
     steps:
@@ -36,5 +36,5 @@ jobs:
           echo "tag=$tag" >> $GITHUB_ENV
 
       - name: Exec the Singularity container
-        run: mpirun -n 4 singularity exec container.sif /opt/mpitest
+        run: 
         

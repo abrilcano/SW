@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    lib/libmatrix_multiplication_without_errors.a /opt
+    
 
 %environment
       MPI_DIR=/opt/mpi
@@ -21,4 +21,4 @@ From: ubuntu:latest
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
     ls 
-    mpiexec -n 4 singularity exec --bind /opt/openmpi:/opt/mpi / /opt/libmatrix_multiplication_without_errors.a
+    ./build.sh
