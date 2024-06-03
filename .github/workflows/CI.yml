@@ -51,7 +51,9 @@ jobs:
           autoconf \
           automake \
           cryptsetup \
+          fuse2fs \
           git \
+          fuse \
           libfuse-dev \
           libglib2.0-dev \
           libseccomp-dev \
