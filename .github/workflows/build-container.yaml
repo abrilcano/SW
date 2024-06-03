@@ -36,5 +36,5 @@ jobs:
           echo "tag=$tag" >> $GITHUB_ENV
 
       - name: Exec the Singularity container
-        run: 
+        run: ls
         

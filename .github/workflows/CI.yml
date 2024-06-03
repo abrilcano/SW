@@ -30,12 +30,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: mpi4py/setup-mpi@v1
+
+      - name: Check out code for the container builds
+        uses: actions/checkout@v3
+
+      - name : Setup MPI
+        uses: mpi4py/setup-mpi@v1
+
+      - name: SSHPASS Github Action
+        uses: matheusvanzan/sshpass-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          run: |
+            echo "Hello, SSH!"
+
       - name: Setup CMake
         uses: jwlawson/actions-setup-cmake@v1
-        
-      - uses: eWaterCycle/setup-singularity@v7
+
+      - name: Setup Singularity
+        uses: eWaterCycle/setup-singularity@v7
         with:
           singularity-version: 3.8.3
       
