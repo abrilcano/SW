@@ -17,8 +17,9 @@ From: ubuntu:latest
     mkdir -p /opt/mpi
     apt-get clean
 
+
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
     ls 
-    ./build.sh
+    ./
