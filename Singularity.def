@@ -21,5 +21,4 @@ From: ubuntu:latest
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-    ls 
-    ./
+    ./build.sh
