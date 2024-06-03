@@ -75,11 +75,13 @@ jobs:
         run: |
           sudo singularity build container.sif Singularity.def
 
-      - name: Run the Singularity container
-        run: ./container.sif 
-
       - name: Install sshpass
         run: | 
           sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Send container to remote host
+        run: |
+          sshpass -p ${{ secrets.PASSWORD }} scp container.sif ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH }}
+
         
         
