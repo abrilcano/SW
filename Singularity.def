@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    ./include /prj /include
+    ./include /prj/include
     ./lib /prj/lib
     ./src /prj/src
     ./googletest /prj/googletest
@@ -16,7 +16,7 @@ From: ubuntu:latest
     echo "Installing required packages..."  
     apt-get update -y && apt-get install -y build-essential cmake libgtest-dev wget git bash gcc gfortran g++ make file 
     apt-get clean
-    apt-get install -y openmpi-bin libopenmpi-dev
+    apt-get install -y libopenmpi-dev
 
     cd prj
     mkdir -p build && cd build
@@ -29,6 +29,5 @@ From: ubuntu:latest
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-
     mpirun -n 2 /prj/main
     
