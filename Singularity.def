@@ -17,13 +17,16 @@ From: ubuntu:latest
     mkdir -p /opt/mpi
     apt-get clean
 
-    echo "Compiling the MPI application..."
-    mpicc -o mpitest src/matrix_multiplication.cpp
+    mkdir -p build && cd build
+    cmake ..
+    cmake --build .
+    cd main ..
 
 
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-    mpirun -n 2 mpitest
+    mpirun -n 2 main
+    pwd 
     ls
-    ./build.sh
+    
