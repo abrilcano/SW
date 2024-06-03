@@ -81,7 +81,15 @@ jobs:
 
       - name: Send container to remote host
         run: |
-          sshpass -p ${{ secrets.PASSWORD }} scp container.sif ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH }}
+          sshpass -p ${{ secrets.PASSWORD }} scp -o StringHostKeyChecking=no -o UserKnownHostsFile=/dev/null container.sif ${{ secrets.USER }}@${{ secrets.HOST }}:.
+
+      - name: Send job.sh
+        run: |
+          sshpass -p ${{ secrets.PASSWORD }} scp -o StringHostKeyChecking=no -o UserKnownHostsFile=/dev/null job.sh ${{ secrets.USER }}@${{ secrets.HOST }}:.
+
+      - name: Run container on remote host
+        run: |
+          sshpass -p ${{ secrets.PASSWORD }} ssh -o StringHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${{ secrets.USER }}@${{ secrets.HOST }} "sbatch job.sh"
 
         
         

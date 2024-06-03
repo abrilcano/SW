@@ -28,5 +28,5 @@ From: ubuntu:latest
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-    mpirun -n 2 /prj/main
+    mpirun -np 2 /prj/main
     
