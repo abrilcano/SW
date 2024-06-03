@@ -50,7 +50,7 @@ jobs:
           singularity-version: 3.8.3
       
       - name: Build Singularity Container
-        run: sudo singularity build --fakeroot container.sif Singularity.def
+        run: singularity build --fakeroot container.sif Singularity.def
 
       - name: Run the Singularity container
         run: sudo ./container.sif 
