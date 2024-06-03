@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
-    
+
 
 %environment
     MPI_DIR=/opt/mpi
@@ -17,8 +17,13 @@ From: ubuntu:latest
     mkdir -p /opt/mpi
     apt-get clean
 
+    echo "Compiling the MPI application..."
+    mpicc -o mpitest src/matrix_multiplication.cpp
+
 
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
+    mpirun -n 2 mpitest
+    ls
     ./build.sh
