@@ -2,33 +2,32 @@ Bootstrap: docker
 From: ubuntu:latest
 
 %files
+    ./include /prj /include
+    ./lib /prj/lib
+    ./src /prj/src
+    ./googletest /prj/googletest
+    ./test /prj/test
+    matrixA.txt /prj
+    matrixB.txt /prj
+    CMakeLists.txt /prj
 
-
-%environment
-    MPI_DIR=/opt/mpi
-    export MPI_DIR
-    export SINGULARITY_MPI_DIR=$MPI_DIR
-    export SINGULARITYENV_APPEND_PATH=$MPI_DIR/bin
-    export SINGULARITYENV_APPEND_LD_LIBRARY_PATH=$MPI_DIR/lib
 
 %post
     echo "Installing required packages..."  
-    apt-get update && apt-get install -y build-essential cmake libgtest-dev wget git bash gcc gfortran g++ make file 
-    mkdir -p /opt/mpi
+    apt-get update -y && apt-get install -y build-essential cmake libgtest-dev wget git bash gcc gfortran g++ make file 
     apt-get clean
 
-    pwd
-    cd . 
+    cd prj
     mkdir -p build && cd build
     cmake ..
     cmake --build .
     cp main ..
 
 
+
 %runscript
     echo "Executing Matrix-Matrix Multiplication with MPI"
     # Command to run your MPI program
-    mpirun -n 2 main
-    pwd 
-    ls
+
+    mpirun -n 2 /prj/main
     
